@@ -37,9 +37,3 @@ resource "yandex_compute_instance" "platform" {
     serial-port-enable = 1
     ssh-keys           = "ubuntu:${var.vms_ssh_root_key}"
   }
-
-}
-
-resource "yandex_vpc_network" "develop" {
-  name = var.vpc_name
-}
