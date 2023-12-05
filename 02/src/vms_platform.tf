@@ -43,7 +43,7 @@ variable "vm_web_boot_disk_image_id" {
 
 variable "vm_web_network_interface_network_id" {
   type        = string
-  default     = "e9b1umt1rjp7si51sgc5"
+  default     = "yandex_vpc_network.develop.id"
   }
 
 ###new cloud vars for exercise 3
@@ -90,5 +90,5 @@ variable "vm_db_boot_disk_image_id" {
   }
 variable "vm_db_network_interface_network_id" {
   type        = string
-  default     = "e9b1umt1rjp7si51sgc5"
+  default     = "yandex_vpc_network.develop.id"
   }
