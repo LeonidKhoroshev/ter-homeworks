@@ -105,6 +105,4 @@ variable "vm_db_network_interface_network_id" {
 
 variable "vm_metadata" {
   type      = map
-  default   = {serial_port_enable = "1", ssh_keys = "ubuntu:AAAAB3NzaC1yc2EAAAADAQABAAABAQCgT8Ny1LD7hTjTan3NOKzgpZ9FEJC7+G7Zfm+bs+9bXZhQ/B6gwjJh0VI6RsVo2wZKsosIc2DZogA+NlWbefQfiC5RKtt/iZMEofBHkhCgxUEHdUEqUkaC7AFfkr4ozrYPKlQOCBbc6S4xJewUmNliXJLrHuv6RZ5TKoIgiKRwaOVT7JqUAnLWyw43+FSpzHUfefLVzaIOVIQV4SEEyl3d/2Cl5gJ/R7sulPomaRwejPi8LG+VZaoF9Wh2JlpCEU7Vm1WKhZ2jd//LlGKoVnqMWlNtSdXVw5B6XZEpCIQfES9DNrlWDyEACFSeSkus30f1Qpe1ZqyIqSnqVgpcANVz root@localhost.localdomain
-
-}
+  default   = {serial_port_enable = "1", ssh_keys = "ubuntu:AAAAB3NzaC1yc2EAAAADAQABAAABAQCgT8Ny1LD7hTjTan3NOKzgpZ9FEJC7+G7Zfm+bs+9bXZhQ/B6gwjJh0VI6RsVo2wZKsosIc2DZogA+NlWbefQfiC5RKtt/iZMEofBHkhCgxUEHdUEqUkaC7AFfkr4ozrYPKlQOCBbc6S4xJewUmNliXJLrHuv6RZ5TKoIgiKRwaOVT7JqUAnLWyw43+FSpzHUfefLVzaIOVIQV4SEEyl3d/2Cl5gJ/R7sulPomaRwejPi8LG+VZaoF9Wh2JlpCEU7Vm1WKhZ2jd//LlGKoVnqMWlNtSdXVw5B6XZEpCIQfES9DNrlWDyEACFSeSkus30f1Qpe1ZqyIqSnqVgpcANVz root@localhost.localdomain}
