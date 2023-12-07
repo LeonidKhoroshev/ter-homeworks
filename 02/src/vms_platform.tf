@@ -15,21 +15,13 @@ variable "vm_web_platform_id" {
   default     = "standard-v2"
   }
 
-variable "vm_web_recources_core" {
-  type        = number
-  default     = "2"
+variable "vm" {
+  type              = map
+  default           = {
+    web_resourses   = {core = 2, memory = 2, core_fraction = 20}
+    db_resourses    = {core = 2, memory = 2, core_fraction = 20}
   }
-
-variable "vm_web_recources_memory" {
-  type        = number
-  default     = "2"
-  }
-
-variable "vm_web_recources_core_fraction" {
-  type        = number
-  default     = "20"
-  description = "guaranteed vCPU, for yandex cloud - 20, 50 or 100 "
-  }
+ }
 
 variable vm_web_scheduling_policy_preemptible {
   type        = bool
@@ -43,7 +35,7 @@ variable "vm_web_boot_disk_image_id" {
 
 variable "vm_web_network_interface_network_id" {
   type        = string
-  default     = "yandex_vpc_network.develop.id"
+  default     = "yandex_vpc_subnet.develop.id"
   }
 
 ###new cloud vars for exercise 3
@@ -63,32 +55,20 @@ variable "vm_db_platform_id" {
   default     = "standard-v2"
   }
 
-variable "vm_db_recources_core" {
-  type        = number
-  default     = "2"
-  }
-
-variable "vm_db_recources_memory" {
-  type        = number
-  default     = "2"
-  }
-
-variable "vm_db_recources_core_fraction" {
-  type        = number
-  default     = "20"
-  description = "guaranteed vCPU, for yandex cloud - 20, 50 or 100 "
-  }
-
 variable vm_db_scheduling_policy_preemptible {
   type        = bool
   default     = "true"
   }
 
 variable "vm_db_boot_disk_image_id" {
-  type        = string
   default     = "yandex_compute_image.ubuntu.image_id"
   }
+
 variable "vm_db_network_interface_network_id" {
-  type        = string
-  default     = "yandex_vpc_network.develop.id"
+  default     = "yandex_vpc_subnet.develop.id"
   }
+
+variable "vm_metadata" {
+  type      = map
+  default   = {serial_port_enable = "1", ssh_keys = "ubuntu:AAAAB3N..........ANVz root@localhost.localdomain"}
+}
