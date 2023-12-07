@@ -36,6 +36,22 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+  default     = "ssh-rsa AAAAB3.....cANVz root@localhost.localdomain"
+}
+
+###vars for locals.tf
+
+variable "instance" {
+  type        = string
+  default = "netology-develop-platform"
+}
+
+variable "name_web" {
+  type        = string
+  default = "web"
+}
+
+variable "name_db" {
+  type        = string
+  default = "db"
 }
