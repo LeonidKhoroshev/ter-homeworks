@@ -1,4 +1,5 @@
 resource "yandex_compute_disk" "disk" {
+  depends_on  = [yandex_vpc_security_group.example]  
   count   = var.disk_count
   name  = "${var.disk_name}-${count.index + 1}"
   size  = var.disk_size
@@ -32,9 +33,9 @@ boot_disk {
   }
 
 dynamic "secondary_disk" {
-   for_each = "${yandex_compute_disk.disk.*.id}"
+   for_each = "${yandex_compute_disk.disk.*}"
    content {
-        disk_id = yandex_compute_disk.disk["${secondary_disk.key}"].id
+     disk_id = lookup(secondary_disk.value, "id")
    }
   }
 
