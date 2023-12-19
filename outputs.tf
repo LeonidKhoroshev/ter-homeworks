@@ -1,21 +1,14 @@
 
 output "web" {
- value = {
-     for k, v in yandex_compute_instance.web:
-     k => ({fqdn=v.fqdn,id=v.id,name=v.name})
-     }
+  value = [for server in yandex_compute_instance.web:{fqdn = server.fqdn, id = server.id, name = server.name }]
 }
 
 output "vm" {
- value = {
-     for k,v in yandex_compute_instance.vm:
-     k => ({fqdn=v.fqdn,id=v.id,name=v.name})
-     }
+  value = [for server in yandex_compute_instance.vm:{fqdn = server.fqdn, id = server.id, name = server.name }]        
 }
 
 output "storage" {
- value = {
-     for k,v in [yandex_compute_instance.storage]:
-     k => ({fqdn=v.fqdn,id=v.id,name=v.name})
-     }
+  value = [for server in [yandex_compute_instance.storage]:{fqdn = server.fqdn, id = server.id, name = server.name}]
 }
+
+ 
