@@ -41,3 +41,45 @@ variable "subnets" {
                 ]
 }
 
+###vars for database mysql modules
+
+variable "cluster_name" {
+  type        = string
+  default     = "example"
+}
+
+variable "db_name" {
+  type        = string
+  default     = "test"
+}
+
+variable "network_id" {
+  type        = string
+  default     = "enpo3d8efurqccjvr2jq"
+}
+
+variable "subnet_id" {
+  type        = string
+  default     = "e9bbjugm4m7aalr1ver3"
+}
+
+variable "securiry_group" {
+  type        = string
+  default     = "enpst7elmqdtqj1j5e16"
+}
+
+variable "my_cluster_id" {
+  type        = string
+  default     = "c9qmav6i4msh8jovbjlq"
+}
+
+variable "user_name" {
+  type        = string
+  default     = "app"
+}
+
+variable "HA" {
+  type       = bool
+  default    = true
+}
+
