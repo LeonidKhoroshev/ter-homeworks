@@ -1,21 +1,6 @@
-resource "yandex_ydb_database_dedicated" "my_database" {
+resource "yandex_mdb_mysql_database" "my_database" {
   name = var.database_name
-  folder_id = var.folder_id  
-  
-  resource_preset_id = var.resource_preset_id
-  scale_policy {
-    fixed_scale {
-      size = var.size
-    }
-  }
-  storage_config {
-    group_count = var.group_count
-    storage_type_id = var.storage_type_id
-  }
-
-  location_id = var.zone
-  network_id  = var.network_id
-  subnet_ids = [var.subnet_ids ]
+  cluster_id = var.my_cluster_id
 }
 
 resource "yandex_mdb_mysql_user" "app" {
