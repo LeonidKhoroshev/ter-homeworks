@@ -51,3 +51,11 @@ variable "version_mysql" {
   type                      = string
   default                   = "8.0"
 }
+
+variable "HA" {
+  type                      = bool
+  description               = "If this is a multiple instance deployment, choose `true` to deploy 2 instances"
+}
+
+
+
